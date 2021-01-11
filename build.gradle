@@ -29,4 +29,7 @@ dependencies {
     
     // OpenCSV for parsing CSV files
     implementation 'com.opencsv:opencsv:5.3'
+    
+    // Decimal4j for rounding doubles (Math.round is not a good option imho)
+    implementation 'org.decimal4j:decimal4j:1.0.3'
 }
