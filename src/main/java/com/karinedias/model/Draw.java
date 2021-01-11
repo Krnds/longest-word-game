@@ -3,10 +3,8 @@ package com.karinedias.model;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.TreeMap;
@@ -29,7 +27,7 @@ public final class Draw {
 	/*
 	 * Get 10 letters draw based on 'Roulette Wheel Selection' algorithm
 	 */
-	public static char[] getDraw(Languages lang) throws IOException, CsvException {
+	public static char[] getDraw(Language lang) throws IOException, CsvException {
 
 		// calling getFrequencies method
 		TreeMap<Character, Double> freq = getFrequencies(lang);
@@ -68,7 +66,7 @@ public final class Draw {
 
 	}
 
-	private static TreeMap<Character, Double> getFrequencies(Languages lang) throws IOException, CsvException {
+	private static TreeMap<Character, Double> getFrequencies(Language lang) throws IOException, CsvException {
 
 		ClassLoader classLoader = Draw.class.getClassLoader();
 		InputStream inputStream = classLoader.getResourceAsStream("letter_frequencies.csv");
@@ -104,7 +102,7 @@ public final class Draw {
 	public static void main(String[] args) throws Throwable, IOException {
 
 		// Select language
-		Languages myLanguage = Languages.ENGLISH;
+		Language myLanguage = Language.ENGLISH;
 
 		// Add random generated set of 10 letters
 		char[] myDraw = getDraw(myLanguage);
