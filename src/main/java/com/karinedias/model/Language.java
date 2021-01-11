@@ -1,6 +1,6 @@
 package com.karinedias.model;
 
-public enum Languages {
+public enum Language {
 
 	ENGLISH,
 	FRENCH
